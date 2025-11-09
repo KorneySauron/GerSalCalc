@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         message = findViewById(R.id.droidText);
-        ImageView droid =findViewById(R.id.droidImage);
+        ImageView droid = findViewById(R.id.droidImage);
 
         droid.setOnClickListener(new View.OnClickListener() {
             @Override

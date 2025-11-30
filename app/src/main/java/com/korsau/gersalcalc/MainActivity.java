@@ -7,45 +7,32 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView message;
-
-    private int counter = 0;
+   private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        message = findViewById(R.id.droidText);
-        ImageView droid = findViewById(R.id.droidImage);
 
-        droid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tapDroid();
-            }
-        });
+        Spinner spinner = (Spinner) findViewById(R.id.langSelector); // Create an ArrayAdapter using the string array and a default spinner layout.
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.languages,
+                android.R.layout.simple_spinner_item
+        );                                                           // Specify the layout to use when the list of choices appears.
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Apply the adapter to the spinner.
+        spinner.setAdapter(adapter);
+
     }
-    private void tapDroid() {
-        counter++;
-        String countAsText;
-        switch (counter){
-            case 1:
-                countAsText = "once";
-                break;
-            case 2:
-                countAsText = "twice";
-                break;
-            default:
-                countAsText = String.format("%d times", counter);
-        }
-        message.setText(String.format("You touched the droid %s", countAsText));
-    }
+
 }
 

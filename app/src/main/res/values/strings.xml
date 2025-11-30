@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">GerSalCalc</string>
     <string name="welcome_text">Hello, Neighbour! Good Bye, i\'ll see you later.</string>
-    <string name="lang_russian">Здарова, хлопцы! Выбери русский, если понял.</string>
-    <string name="lang_german">Servus, Digga! Falls du mi verstehs, wähl mi as.</string>
-    <string name="lang_english">Wassup, bro! Pick me if you get me.</string>
+
+    <string-array name="languages">
+        <item name="lang_english">English</item>
+        <item name="lang_german">Deutsch</item>
+        <item name="lang_russian">Русский</item>
+    </string-array>
+
 </resources>

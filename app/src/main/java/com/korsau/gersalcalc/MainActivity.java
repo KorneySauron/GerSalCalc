@@ -10,26 +10,26 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import java.util.Arrays;
+import java.util.List;
+import com.korsau.gersalcalc.spinner.*;
 
 public class MainActivity extends AppCompatActivity {
 
-   private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final List<String> langs = Arrays.asList("EN", "DE", "RU");
+        final Spinner spinner = (Spinner) findViewById(R.id.langSelector);
 
-        Spinner spinner = (Spinner) findViewById(R.id.langSelector); // Create an ArrayAdapter using the string array and a default spinner layout.
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.languages,
-                android.R.layout.simple_spinner_item
-        );                                                           // Specify the layout to use when the list of choices appears.
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Apply the adapter to the spinner.
+        SpinnerAdapter adapter = new SpinnerAdapter(getApplicationContext(), langs);
+
+        adapter.setDropDownViewResource(R.layout.lang_dropdown_item);
         spinner.setAdapter(adapter);
 
     }

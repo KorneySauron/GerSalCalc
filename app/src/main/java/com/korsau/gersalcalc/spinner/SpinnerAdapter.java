@@ -46,7 +46,7 @@ public SpinnerAdapter(Context context, List<String> langs){
     View row = inflater.inflate(R.layout.lang_dropdown_item, parent, false);
 
     TextView lang = row.findViewById(R.id.langText);
-    ImageView flag = row.findViewById(R.id.flag);
+    ImageView flag = row.findViewById(R.id.flag); //id flag and id langText are in res -> layout folder -> lang_dropdown_item
 
 
 

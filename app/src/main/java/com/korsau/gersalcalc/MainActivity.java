@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final List<String> langs = Arrays.asList("EN", "DE", "RU");
-        final Spinner spinner = (Spinner) findViewById(R.id.langSelector);
+        final Spinner spinner = (Spinner) findViewById(R.id.langSelector); //lang selector is in activity_main xml
 
         SpinnerAdapter adapter = new SpinnerAdapter(getApplicationContext(), langs);
 
-        adapter.setDropDownViewResource(R.layout.lang_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.lang_dropdown_item); //res -> layout folder
         spinner.setAdapter(adapter);
 
     }

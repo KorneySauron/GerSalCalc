@@ -7,20 +7,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_primary20"
-    android:visibility="visible"
+
     tools:context=".MainActivity"
-    tools:visibility="visible"
-    android:theme="@style/Theme.GerSalCalc">
+    >
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_marginTop="48dp"
+        android:layout_height="wrap_content"
         style="@style/MyToolbarStyle"
+        android:minHeight="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_name"
